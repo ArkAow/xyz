@@ -14,6 +14,9 @@
                 <dt>Titre</dt>
                 <dd>{{ $track->title }}</dd>
 
+                <dt>Catégorie</dt>
+                <dd>{{ $track->category->name ?? 'Aucune catégorie' }}</dd>
+
                 <dt>Contributeur</dt>
                 <dd class="flex-center">
                     <x-avatar size="medium" :src="$track->user->avatar" /> {{ $track->user->username }}

@@ -28,6 +28,7 @@ class TrackController extends Controller
             'position' => $week->getTrackPosition($track),
             'liked' => $request->user()->likes()->whereTrackId($track->id)->exists(),
             'embed' => $player->embed($track->player, $track->player_track_id),
+            'categories' => Category::all(),
         ]);
     }
 
@@ -39,7 +40,7 @@ class TrackController extends Controller
         return view('app.tracks.create', [
             'week' => Week::current(),
             'remaining_tracks_count' => $user->remainingTracksCount(),
-            'categories' => Category::all(),  // Récupère toutes les catégories
+            'categories' => Category::all(),
         ]);
     }
 
