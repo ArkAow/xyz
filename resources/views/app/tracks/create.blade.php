@@ -38,7 +38,7 @@
                 <div>
                     <label for="category_id">Catégorie</label>
                     <select name="category_id" id="category_id" class="w-medium">
-                        <option value="">Sélectionnez une catégorie</option>
+                        <option value="">Sélectionnez un genre musicale</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                                 {{ $category->name }}
