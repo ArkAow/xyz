@@ -50,6 +50,14 @@ class Track extends Model
     }
 
     /**
+     * Get the category to which belongs this track.
+     */
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    /**
      * Get current week tracks.
      */
     public function scopeCurrentWeek(Builder $query): Builder
